@@ -147,21 +147,6 @@ footer {
     padding: 10px;
 }
 
-.fa {
-    background: black;
-    color: white;
-    padding: 10px;
-    font-size: 20px;
-    width: 40px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-  }
-
-.fa:hover {
-    opacity: 0.7;
-}
-
 .material-icons {
     background:black;
     color: white;
