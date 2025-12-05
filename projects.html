@@ -1,36 +1,81 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Jen Semler is a graduate student in philosophy at Oxford studying AI ethics">
-        <meta name="author" content="Jen Semler">
-        <meta name="keywords" content="philosophy, AI ethics, Oxford">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--below, the <meta> tag defines the metadata-->
+        <meta charset = "utf-8">
+        <meta name = "description" content = "Jen Semler is philosopher researching artificial moral agency">
+        <meta name = "author" content = "Jen Semler">
+        <meta name = "keywords" content = "philosophy, AI ethics">
+        <!--below: tells the browser to scale the page to the size of the device-->
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <!--below is the title that shows up on the tab-->
         <title>Jen Semler | Research</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link rel="stylesheet" href="style.css">
-        <link href='https://fonts.googleapis.com/css?family=Manrope' rel='stylesheet'>
-        <style>
-            body {font-family: 'Inter'}
-        </style>
+        <!--below is the link to favicon-->
+        <link rel = "icon" type = "image/x-icon" href = "JS.png">
+        <!--below is the link to the CSS sheet-->
+        <link rel = "stylesheet" href = "style.css">
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+        <!--below are fonts-->
+        <link href = 'https://fonts.googleapis.com/css?family=Fugaz One' rel = 'stylesheet'>
+        <link href = 'https://fonts.googleapis.com/css?family=Roboto' rel = 'stylesheet'>
+    </head>
 
-    <body>
-        <header>
-            <h1><a href ="index.html" class="logo">JEN SEMLER</a></h1>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <nav>
-                <ul>
-                    <li><a href="projects.html">research</a></li>
-                    <li><a href="pubs.html">publications</a></li>
-                    <li><a href="Semler_CV.pdf" target="_blank">CV</a></li>
-                </ul>
-            </nav>
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-            </label>
-                   
-        </header>
+    <body class = "projects">
 
+        <nav>
+            <a href = "index.html" class = logo><span>JEN SEMLER</span></a>
+
+            <!--below creates the nav bar as a list-->
+            <ul class = "links">
+                <li class = "res"> <a href = "projects.html">research</a> </li>
+                <li class = "pubs"> <a href = "pubs.html">publications</a> </li>
+                <li class = "teach"> <a href = "teaching.html">teaching</a> </li>
+                <li> <div class = "btn"><a href = "Semler_CV.pdf" target = "_blank">CV</a></div></li>
+            </ul>
+
+            <i class="fa-solid fa-bars" id = "menu"></i>
+
+        </nav>
+                
+        <section id = "research">
+
+            <div class = "research-description">
+                <div><h2>Oveview</h2></div>
+
+                <div>I work on artificial moral agency: how AI systems <i>can</i> and <i>should</i> be used in the moral domain.</div>
+                
+                <div>
+                    My research has three strands. 
+                    The <span class = "orange">theoretical</span> strand concerns the nature of moral agency (what makes an entity capable of acting morally wrongly and responsibly).
+                    The <span class = "orange">applied</span> strand concerns how we should use AI in the moral domain (both in general and in specific contexts).
+                    The <span class = "orange">empirical</span> strand concerns the capabilities of AI systems (technically grounded philosophy) and the ways in which humans think about moral agency (experimental philosophy).
+                </div>
+
+             <div class = "btn-box">
+                    <div class = btn><a href = "https://philpeople.org/profiles/jen-semler" target = "_blank">PhilPeople</a></a></div>
+                    <div class = btn><a href = "https://scholar.google.com/citations?user=VAjJy3QAAAAJ&hl=en" target = "_blank">Google Scholar</a></a></div>
+                </div>
+
+            </div>
+
+            <div class = "wip">
+                <h2>Works in Progress</h2>
+                <div>Moral Agents Unlike Us</div>
+                <div>Artificial Moral Behavior</div>
+                <div>The Folk Concept of Moral Agency <br>(with Joanna Demaree-Cotton)</div>
+                <div>Autonomy, Advice, and AI <br>(with Kyle van Oosterum)</div>
+                <div>No Alignment Without Moral Agency <br>(with Helen Nissenbaum)</div>
+            </div>
+
+        </section>
+        
+        <script src= "script.js"></script>
+
+    </body>
+
+
+
+        <!--
         <main class="research-grid">
 
             <div class="project">
@@ -69,7 +114,8 @@
                 <li><b>Artificial Moral Behavior</b>
                 <br> I argue that delegating moral decisions to AI systems is wrong because doing so replaces events that should be moral actions with mere behaviors. 
                 </li>
-
+                <div class = "btn"><a href = "https://philpeople.org/profiles/jen-semler" target = "_blank">PhilPeople</a></div>
+            <div class = "btn"><a href = "https://scholar.google.com/citations?user=VAjJy3QAAAAJ&hl=en" target = "_blank">Google Scholar</a></div>
         </main> 
 
         <footer>

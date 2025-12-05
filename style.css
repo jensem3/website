@@ -1,245 +1,305 @@
-
-
-:root {
-    --background: rgba(10, 10, 90, 1)
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
+a:link { /* makes all the uncliked links the right color and no underline */
+    color:inherit;  
+    text-decoration: none;
+}
+
+a:visited { /* makes all the clicked links the right color and no underline */
+    color: inherit;
+    text-decoration: none;
 }
 
 body {
-    margin-top: 0;
-    margin-left: 0;
-    font-size: 1em;
-    background-color: white;
+    min-height: 100vh; /* fills the whole screen */
+    background-color: rgba(250, 231, 213, 0.906); /* main background*/
+    font-family: 'Roboto', sans-serif;
+    padding-top: 60px;
 }
 
-/* header and nav bar*/ 
-header {
-    background: var(--background);
-    position: fixed;
-    text-align: center;
-    z-index: 999;
-    width: 100%;
-    font-family: 'Manrope', sans-serif;
-    display: grid;
-    grid-template-columns: 2fr auto auto 1fr;
-}
-
-.logo {
-    margin: 0;
-    color:white;
-    text-decoration: none;
-    grid-column: 2 / span 1;
-    }
-
-.nav-toggle, 
-.nav-toggle-label {
-    display: none;
-}
-
-nav {
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    left: 0;
-    background: var(--background);
-    width: 100%;
-    all: unset;
-    grid-column: 3 / span 1;
-    display: flex;
-    justify-content: flex-end;
+nav { /* navbar as a whole*/
+    color: white; /* font color for navbar*/
+    position: fixed; /* keeps nav bar at the top*/
+    top: 0;
+    width: 100%; /* fills the whole screen width*/
+    padding: 2em 15%;
+    display: flex; 
     align-items: center;
+    justify-content: space-between; /* space between the logo and the list */
+    background-color: orangered;
+    z-index: 1000; /* high number to ensure nothing goes in front of it */
 }
 
-nav ul {
-    margin: 0;
-    padding: 0;
+nav ul { /* items in the navbar  */
     list-style: none;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    gap: 3em; /* between the items on the list */
 }
 
-nav li {
-    margin-left: 3em;
-    margin-bottom: 0;
-}
-
-nav a, nav a:visited {
+nav ul a { /* for the links in the navbar */
     color: white;
-    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+nav ul a:hover { /* adds effect when you hover over the link */
+    color: white;
+    text-shadow: 0 0 1.5rem white;
+}
+
+.logo { 
+    font-family: 'Fugaz One', sans-serif;
+    font-size: 2rem;
+    color: white;
+    font-weight: 800;
+    transition: 0.2s ease;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+    color: white;
+    text-shadow: 0 0 1.5rem white;
+}
+
+#menu {
+    font-size: 2rem;
+    display: none; /* the "hamburger" icon is hidden and will later be visible only when the screen size is below a certain amount */
+}
+
+.res:active {
+    color:blue;
+}
+
+section {
+    color: rgb(3, 3, 82); /* font color for all main text */
+    min-height: 100vh;
+    padding: 5% 15%;
+    width: 100%;
+    position: relative;
+}
+
+#home { /* homepage */ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+}
+
+#home img { 
+    width: 30vw; /* makes the image take up 30% of the window */ 
+    border-radius: 50%; /* makes the image round */
+}
+
+.info-box { /* container for all the text on the homepage */
+    display: flex;
+    flex-direction: column; /* makes the text stack vertically */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem; /* between divs */
+    line-height: 1.5; /* between lines */
+}
+
+.info-box h3 {
     font-size: 1.2rem;
-    opacity: 1;
+    font-weight: 500;
 }
 
-nav a:hover {
-    color:rgb(203, 99, 51);
+.info-box h1{
+    font-size: 2rem;
+    font-family: 'Fugaz One', sans-serif;
+    font-weight: 600;
 }
 
-/*main content*/
-main {
-    margin-top: 0;
-    padding-top: 100px;
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.9em;
-    color:rgb(44, 43, 43);
-    line-height: 1.3;
-}
-
-main a:link, main a:visited {
+.btn {
+    color: inherit;
     text-decoration: none;
-    color: rgba(35, 35, 175, 1)
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid rgb(3, 3, 82);
+    cursor: pointer;
+    font-weight: 500;
+    text-wrap: nowrap;
+    transition: 0.2s ease-in-out;
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-column-gap: 50px;
-    padding-top: 150px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.bio {
-    text-align: justify;
-}
-
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-
-.research-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.project {
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: justify;
-}
-
-.pubs {
-    padding-left: 150px;
-    padding-right: 150;
-    text-align: justify;
-}
-
-h2 {
-    text-align: justify;
-}
-
-h2, h3 {
-    font-family: 'Manrope', sans-serif;
-}
-
-p {
-    margin-top: 0;
-}
-
-/*footer*/
-footer {
-    text-align: center;
-    position: fixed; bottom:0px;
-    z-index: 999;
-    width: 100%;
-    padding: 10px;
-}
-
-.material-icons {
-    background:black;
+.btn:hover {
+    background-color: rgb(3, 3, 82);
     color: white;
-    padding: 10px;
-    font-size: 20px;
-    width: 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
 }
 
-@media screen and (max-width: 800px) {
-    header {
-        display: block;
+.socials {
+    display: flex;
+    gap: 2rem;
+}
+
+.socials i {
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.socials i:hover {
+    transform: scale(1.1)
+}
+
+.projects { /* specific to the "research" page of the website */
+    .res { /* specific to the "research" tab on the navbar */
+        color: rgb(3, 3, 82);
+    }
+}
+
+.publications { /* specific to the "publications" page of the website */
+    .pubs { /* specific to the "teaching" tab on the navbar */
+        color: rgb(3, 3, 82);
+    }
+}
+
+.teaching { /* specific to the "teaching" page of the website */
+    .teach { /* specific to the "teaching" tab on the navbar */
+        color: rgb(3, 3, 82);
+    }
+}
+
+#research { /* research page */ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+}
+
+.research-description { 
+    width: 50vw; /* makes the div take up 30% of the window */ 
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 1.5rem;
+}
+
+.research-description h2 {
+    text-align: center;
+}
+
+.orange {
+    color: orangered;
+}
+
+.wip {
+    width: 50vw;
+    display: flex;
+    flex-direction: column; /* makes the text stack vertically */
+    text-align: center;
+    gap: 1.5rem; /* between divs */
+    line-height: 1.5; /* between lines */
+}
+
+#papers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-top: 100px;
+}
+
+.btn-box { /* container for all the buttons */
+    display: flex;
+    gap: 1rem; /* between buttons */
+}
+
+.paper-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: justify;
+    border: 2px solid rgb(3, 3, 82);
+    padding: 1.5rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+}
+
+.paper-box h3{
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+#teaching {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+}
+
+
+@media(max-width: 968px) { /* responsiveness, changes implemented when screen size is below 900px */
+    section {
+        padding: 8em 15%;
     }
 
-    nav {
+    #menu {
+        display: block; /* shows the "hamburger" */
+    }
+
+    .links {
         position: absolute;
-        text-align: left;
         top: 100%;
-        left: 0%;
-        display: none;
-        background: var(--background);
+        right: 0;
         width: 100%;
-    }
-
-    nav ul {
-        display: block;
-    }
-
-    nav li {
-        margin-bottom: 1em;
-        margin-left: 1em;
-    }    
-
-    .nav-toggle {
+        padding: 1em 3em;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        background: orangered;
+        text-align: center;
         display: none;
     }
-
-    .nav-toggle-label {
-        position: absolute;
-        top: 0;
-        left: 0; 
-        margin-left: 1em;
-        height: 100%;
-        display: flex;
-        align-items: center;
+    
+    .links a{
+        margin: 0.5em;
+        display: block;
+        font-size: 1.5em;
+        color: white;
     }
 
-    .nav-toggle:checked ~ nav {
+    .links.active {
         display: block;
     }
-        
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        display: block;
-        background: white;
-        height: 2px;
-        width: 2em;
-        border-radius: 2px;
-        position: relative;
-    }
     
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        content: '';
-        position: absolute;
+    #home {
+        padding-top: 150px;
+        flex-direction: column;
+        gap: 2em;
     }
-    
-    .nav-toggle-label span::before {
-        bottom: 7px;
+    #home h1 {
+        font-size: 1.5em;
     }
-    
-    .nav-toggle-label span::after {
-        top: 7px;
+    #home h3 {
+        font-size: 1em;
+    }
+    #home img {
+        width: 24vw;
     }
 
-    .research-grid {
-        grid-template-columns: 1fr;
-        margin-left: 50px;
-        margin-right: 50px;
+    #research {
+        padding-top: 150px;
+        flex-direction: column;
+        gap: 2em;
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
-        margin-left: 50px;
-        margin-right: 50px;
+    .btn-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn {
+        width: fit-content;
+        display: inline-block;
     }
 }
